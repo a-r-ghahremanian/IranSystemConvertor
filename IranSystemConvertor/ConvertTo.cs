@@ -233,7 +233,7 @@ namespace IranSystemConvertor
             // تبدیل به رشته و ارسال به فراخواننده
             byte[] unicodeContent = Encoding.Convert(encoding, Encoding.Unicode, newStringBytes);
 
-            string convertedString = Encoding.Unicode.GetString(unicodeContent).Trim();
+            string convertedString = Encoding.Unicode.GetString(unicodeContent).Replace('ي', 'ی').Replace('ك', 'ک').Trim();
 
             return IncludeNumbers(convertedString);
         }
